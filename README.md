@@ -1,6 +1,6 @@
 **EKS CLUSTER MANAGEMENT USING TERRAFORM** 
 
-This repository is to setup Custom VPC, and setup EKS Cluster in the Custom VPC in AWS Environment
+This repository is to setup Custom VPC, and then provision  EKS Cluster in the Custom VPC in AWS.
 
 
 **VPC (vpc.tf):**
