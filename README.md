@@ -3,6 +3,27 @@
 This repository is to setup Custom VPC, and then provision  EKS Cluster in the Custom VPC in AWS.
 
 
+Fork this repository, and inside the folder where you have tf files, execute the terraform commands.
+
+**Check the plan and verify the resources that would be created**
+
+```
+terraform plan
+
+```
+**Apply the configuration to provision the infra using terraform**
+
+```
+terraform apply -auto-approve [in real time, do not use -auto-approve flag, instead use without it and double check if right resources are getting provisioned.]
+```
+
+**Destroying Infra after the completion of activity**
+
+```
+terraform destroy -auto-approve [in real time, do not use -auto-approve flag, instead use without it and double check if right resources are getting deleted.]
+
+```
+
 **VPC (vpc.tf):**
 
 ```
