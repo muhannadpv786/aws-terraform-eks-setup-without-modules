@@ -47,10 +47,10 @@ With the help of oidc.tf, i am adding OIDC as an identity provider to AWS IAM.
  It will install ingress controller once cluster is setup and config file is generated. This ingress controller would be helpful for Ingress resources to provision ALB. 
 ```
 
-**Cluster Autoscaler IAM Role:**
+**Cluster Autoscaler IAM Role (cluster-autoscaler.tf):**
 
 ```
-This tf file would create required IAM Role and policies for Cluster autoscaler to work properly.
+This tf file cluster-autoscaler.tf would create required IAM Role and policies for Cluster autoscaler to work properly.
 ```
 
 **Cluster Autoscaler**
