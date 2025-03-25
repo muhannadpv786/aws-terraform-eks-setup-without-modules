@@ -33,7 +33,7 @@ This repository is to setup Custom VPC, and setup EKS Cluster in the Custom VPC 
 ```
 Amazon EKS supports using OpenID Connect (OIDC) identity providers as a method to authenticate users to your cluster. OIDC identity providers can be used with, or as an alternative to AWS Identity and Access Management (IAM). 
 
-With the help of oidc.tf, i am adding OIDC as a provider to AWS IAM. 
+With the help of oidc.tf, i am adding OIDC as an identity provider to AWS IAM. 
 
 ```
 
