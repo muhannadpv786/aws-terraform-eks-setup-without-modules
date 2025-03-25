@@ -28,6 +28,15 @@ This repository is to setup Custom VPC, and setup EKS Cluster in the Custom VPC 
 3. It will create a config file with your cluster configuration which got created under .kube directory which resides in your home directory. This file generation is mandatory to be present in order to authenticate to cluster and also do other tasks which would be done inside the EKS cluster. 
 ```
 
+**OIDC**
+
+```
+Amazon EKS supports using OpenID Connect (OIDC) identity providers as a method to authenticate users to your cluster. OIDC identity providers can be used with, or as an alternative to AWS Identity and Access Management (IAM). 
+
+With the help of oidc.tf, i am adding OIDC as a provider to AWS IAM. 
+
+```
+
 **EKS Addons (eks-addons.tf):**
 
 ```
@@ -42,4 +51,44 @@ This repository is to setup Custom VPC, and setup EKS Cluster in the Custom VPC 
 
 ```
 This tf file would create required IAM Role and policies for Cluster autoscaler to work properly.
+```
+
+**Cluster Autoscaler**
+
+```
+Before installing cluster autoscaler, please update the cluster name in the file manifests/cluster-autoscaler/cluster-autoscaler-autodiscover.yaml at line number 165, with the name you provided while provisioning the cluster.
+
+With the help of manifest file under manifests/cluster-autoscaler/cluster-autoscaler-autodiscover.yaml, we can deploy cluster autoscaler.
+
+Copy this file on the bastion server and execute the below command. 
+
+kubectl apply -f cluster-autoscaler-autodiscover.yaml
+
+```
+
+**Bastion Server**
+
+```
+To simulate the realtime scenario, we have created Bastion server in public subnet, in order to access the EKS cluster.
+
+
+By default, you would not be able to connect to the EKS Cluster through your laptops directly, you would need to connect to Bastion Host.
+
+
+During the Bastion Server provisioning, i have executed the shell script, which will install aws cli, kubectl on the server, which would be used to configure aws credentials and also to connect to cluster. 
+
+Here we have few pre-requisites to be done.
+
+1. First you need to configure your aws credentials with profile or without profile (usually multiple teams will have multiple profiles, such as Devops , developers, qa-team etc )
+
+2. Next, we need to execute the below command to generate config file to authenticate to cluster. here we can again provide --profile option as well to connect. 
+
+aws eks --region us-east-1 update-kubeconfig --name my-eks-cluster
+
+# Replace the correct region and name of cluster in above command. 
+
+3. Create RBAC permissions for the users you want to provide access to the cluster. Here, we have provided access to users "devops" and "eksdeveloper". 
+If the users are provided proper access through role and rolebindings, then only the users can communicate with the cluster.  
+
+3. Next, you can execute the kubectl commands.
 ```

@@ -23,4 +23,3 @@ resource "local_sensitive_file" "private_key" {
 
 
 
-// local_sensitive_file.private_key.key_name = "ansible-ssh-key.pem"

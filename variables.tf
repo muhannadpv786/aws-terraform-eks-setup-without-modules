@@ -9,3 +9,4 @@ variable "vpc_cidr" {}
 variable "cluster_version" {}
 #variable "oidc_thumbprint_list" {}
 variable "accountid" {}
+variable "bastion_instance_type"{}
