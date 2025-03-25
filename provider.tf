@@ -13,14 +13,14 @@ terraform {
       version = "2.17.0"
     }
   }
-  /*backend "s3" {
-    bucket = "my-terraform-infra-bucke"
+  backend "s3" {
+    bucket = "my-terraform-infra-bucket"
     key    = "terraform.tfstate"
     region = "us-east-1"
     //  dynamodb_table = "my-terraform-infra-table"
     use_lockfile = "true"
   }
-*/
+
 }
 
 provider "aws" {
