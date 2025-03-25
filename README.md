@@ -77,6 +77,10 @@ By default, you would not be able to connect to the EKS Cluster through your lap
 
 During the Bastion Server provisioning, i have executed the shell script, which will install aws cli, kubectl on the server, which would be used to configure aws credentials and also to connect to cluster. 
 
+NOTE:  YOU WILL FIND A KEY PAIR DOWNLOADED LOCALLY IN YOUR FOLDER WITH NAME SOMETHING LIKE  "tf-key-pair-0a2f96df". 
+
+you can use the above similar key which gets created to ssh to server using public ip it assigned to bastion server. 
+
 Here we have few pre-requisites to be done.
 
 1. First you need to configure your aws credentials with profile or without profile (usually multiple teams will have multiple profiles, such as Devops , developers, qa-team etc )
