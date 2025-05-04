@@ -16,7 +16,7 @@ terraform {
   backend "s3" {
     bucket = "muhannadbucket123"
     key    = "terraform.tfstate"
-    region = "us-east-1"
+    region = "ap-south-1"
     //  dynamodb_table = "my-terraform-infra-table"
     use_lockfile = "true"
   }
