@@ -1,10 +1,10 @@
 
 data "aws_iam_user" "devops" {
-  user_name = "devops"
+  user_name = "muhannad"
 }
 
 data "aws_iam_user" "eksdeveloper" {
-  user_name = "eksdeveloper"
+  user_name = "muhannad1"
 }
 
 resource "aws_eks_access_entry" "example" {
