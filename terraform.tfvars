@@ -1,6 +1,6 @@
 region                = "ap-south-1"
 cluster_name          = "muhannad-cluster"
-cluster_version       = "1.33"
+cluster_version       = "1.32"
 vpc_cidr              = "10.0.0.0/16"
 instance_types        = ["t3.medium"]
 public-subnet-1-cidr  = "10.0.1.0/24"
